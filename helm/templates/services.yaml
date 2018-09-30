@@ -4,8 +4,8 @@ metadata:
   name: "{{ .Values.name }}"
 spec:
   ports:
-  - port: "{{ .Values.port }}"
-    targetPort: "{{ .Values.port }}"
+  - port: {{ .Values.port }}
+    targetPort: {{ .Values.port }}
     protocol: TCP
     name: http
   selector:

@@ -5,4 +5,4 @@ metadata:
 spec:
   backend:
     serviceName: "{{ .Values.name }}"
-    servicePort: "{{ .Values.port }}"
+    servicePort: {{ .Values.port }}

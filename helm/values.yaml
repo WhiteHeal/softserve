@@ -1,6 +1,6 @@
 image:
   repository: zndre/softserve
   tag: latest
-name: softserveDemo3
+name: softservedemo
 port: 80
 replicas: 5
