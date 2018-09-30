@@ -15,21 +15,16 @@ node{
             app.push("${env.BUILD_ID}")
         }
     }
-    stage("Helm deploy") {
-        withKubeConfig([credentialsId: '252844ec-fa83-4dbd-af3b-07934e6f2e42',
+    withKubeConfig([credentialsId: '252844ec-fa83-4dbd-af3b-07934e6f2e42',
                 serverUrl: 'https://api-softserve-k8s-local-tl03un-1783831593.eu-central-1.elb.amazonaws.com',
                 contextName: 'softserve.k8s.local'
                 ]) {
-                    sh 'helm upgrade --install demo3 helm'
-                }
-    }
-    stage("Test"){
-        sh 'sleep 25'
-            withKubeConfig([credentialsId: '252844ec-fa83-4dbd-af3b-07934e6f2e42',
-                serverUrl: 'https://api-softserve-k8s-local-tl03un-1783831593.eu-central-1.elb.amazonaws.com',
-                contextName: 'softserve.k8s.local'
-                ]) {
-                    sh 'kubectl run test -i --tty --rm --restart=Never --image=yauritux/busybox-curl curl esp-echo'
-                }
+        stage("Helm deploy") {
+                sh 'helm upgrade --install demo3 helm'
+        }
+        stage("Test"){
+            sh 'sleep 25'
+                sh 'kubectl run test -i --tty --rm --restart=Never --image=yauritux/busybox-curl curl esp-echo'
+        }
     }
 }
