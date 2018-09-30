@@ -1,16 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-#  namespace: my-namespace
-  name: esp-echo
+  name: "{{ .Values.name }}"
 spec:
   ports:
-  - port: 80
-    targetPort: 80
+  - port: "{{ .Values.port }}"
+    targetPort: "{{ .Values.port }}"
     protocol: TCP
     name: http
   selector:
-    app: esp-echo
+    app: "{{ .Values.name }}"
   type: NodePort
 
 
