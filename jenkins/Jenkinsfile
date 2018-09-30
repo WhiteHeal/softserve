@@ -20,6 +20,7 @@ node{
                 contextName: 'softserve.k8s.local'
                 ]) {
         stage("Helm deploy") {
+                sh 'helm ls'
                 sh 'helm upgrade --install demo3 helm'
         }
         stage("Test"){
