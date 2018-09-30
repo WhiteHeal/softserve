@@ -2,7 +2,7 @@ node{
     def app
 
     stage('Checkout') {
-        git branch: 'master', credentialsId: 'whiteheal_git', url: 'https://github.com/k0938350210/task.git'
+        git branch: 'master', credentialsId: 'whiteheal_git', url: 'https://github.com/WhiteHeal/softserve.git
     }
    stage('Build image') {
         dir('demo3/docker') {
