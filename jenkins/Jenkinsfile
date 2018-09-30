@@ -25,7 +25,7 @@ node{
         }
         stage("Test"){
             sh 'sleep 25'
-                sh 'kubectl run test -i --tty --rm --restart=Never --image=yauritux/busybox-curl curl esp-echo'
+                sh 'kubectl run test -i --tty --rm --restart=Never --image=yauritux/busybox-curl curl softservedemo'
         }
     }
 }
