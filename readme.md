@@ -75,4 +75,4 @@ useful command
     
     
     kops update cluster --yes
-    kops rolling-update cluster
+    kops rolling-update cluster --cloudonly
