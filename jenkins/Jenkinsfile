@@ -16,12 +16,12 @@ node{
         }
     }
     withKubeConfig([credentialsId: '252844ec-fa83-4dbd-af3b-07934e6f2e42',
-                serverUrl: 'https://api-softserve-k8s-local-tl03un-1783831593.eu-central-1.elb.amazonaws.com',
-                contextName: 'softserve.k8s.local'
+                serverUrl: 'https://api-softserve-demo4-diplo-3v3kal-1223726382.eu-central-1.elb.amazonaws.com',
+                contextName: 'softserve-demo4-diploma.k8s.local'
                 ]) {
         stage("Helm deploy") {
                 sh 'helm ls'
-                sh 'helm upgrade --install demo3 helm'
+                sh 'helm upgrade --install demo4 helm'
         }
         stage("Test"){
             sh 'sleep 25'
