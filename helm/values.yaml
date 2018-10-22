@@ -3,4 +3,4 @@ image:
   tag: latest
 name: softservedemo
 port: 80
-replicas: 10
+replicas: 1
