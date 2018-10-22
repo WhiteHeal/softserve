@@ -8,8 +8,8 @@ echo "aws configured"
 #sudo mv kops-linux-amd64 /usr/local/bin/kops
 #echo "kops instaled"
 
-aws s3api create-bucket --bucket softserve-demo3-asdfgh  --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1
-aws s3api put-bucket-versioning --bucket softserve-demo3-asdfgh --versioning-configuration Status=Enabled
+aws s3api create-bucket --bucket $BUCKET_NAME  --region $REGION --create-bucket-configuration LocationConstraint=$REGION
+aws s3api put-bucket-versioning --bucket $BUCKET_NAME --versioning-configuration Status=Enabled
 echo "bucket created"
 
 kops create cluster \
